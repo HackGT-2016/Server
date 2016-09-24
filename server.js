@@ -1,6 +1,21 @@
 var express = require('express');
 var app = express();
 var path = require('path')
+var fs = require('fs')
+
+var secrets = './secret-config.json';
+var config
+
+try {
+    config = require(secrets);
+}
+catch (err) {
+    config = {}
+    console.log("Unable to read file '" + secrets + "': ", err);
+    console.log("See secret-config-sample.json for an example");
+}
+
+console.log("API key is:", config.apiKey);
 
 app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'index.html'));
