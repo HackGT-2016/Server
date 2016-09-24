@@ -8,6 +8,7 @@ class User(models.Model):
     password = models.CharField(max_length = 200)
 
 class Company(models.Model):
+    name = models.CharField(max_length = 300)
     description = models.CharField(max_length = 300)
     prizes = models.CharField(max_length = 300)
 
