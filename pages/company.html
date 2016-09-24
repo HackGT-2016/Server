@@ -1,7 +1,12 @@
 <div class="jumbotron text-center">
+  <div ng-if="company.name">
     <h1>{{ company.name }}</h1>
     <p>{{ company.description }}</p>
     <p>{{ company.photo }}</p>
     <p>Current Amount: {{ company.current_amount }}</p>
     <p>Total Amount: {{ company.total_amount }}</p>
+  </div>
+  <div ng-if="company.name == undefined">
+    <h1>Company not found</h1>
+  </div>
 </div>

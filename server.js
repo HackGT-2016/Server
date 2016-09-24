@@ -38,6 +38,14 @@ app.get('/tags/:tagId', function(req, res) {
       {
         "team1": "Microsoft",
         "team2": "Amazon"
+      },
+      {
+        "team1": "Capcom",
+        "team2": "Sega"
+      },
+      {
+        "team1": "Batman",
+        "team2": "Superman"
       }
     ]);
 });
