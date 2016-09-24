@@ -58,6 +58,10 @@ striveApp.config(function($routeProvider) {
 striveApp.controller('mainController', function($scope) {
     // create a message to display in our view
     $scope.message = 'Everyone come and see how good I look!';
+    //TODO: Nessie
+    $scope.donate = function(amount) {
+      alert(amount);
+    }
 });
 
 striveApp.controller('aboutController', function($scope) {
