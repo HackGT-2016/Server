@@ -1,0 +1,7 @@
+<!-- home.html -->
+<div class="jumbotron text-center">
+    <h1>Matchups</h1>
+    <div ng-repeat="matchup in matchups">
+      <p><a href="#/company/{{matchup.team1}}">{{matchup.team1}}</a> vs <a href="#/company/{{matchup.team2}}">{{matchup.team2}}</a></p>
+    </div>
+</div>

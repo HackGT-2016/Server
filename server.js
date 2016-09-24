@@ -21,8 +21,7 @@ app.get('/tags', function (req, res) {
         "toys",
         "entertainment",
         "cooking",
-        "living",
-        "kevin's gay"
+        "living"
     ]);
 });
 
@@ -35,31 +34,23 @@ app.get('/teams', function (req, res) {
 });
 
 app.get('/tags/:tagId', function(req, res) {
-  res.send({
-    "matchups" : [
+  res.send([
       {
-        "team1": {
-          "name": "Microsoft",
-          "description": "A technology company",
-          "photo" : "",
-          "current_amount": 100,
-          "total_amount": 1000
-        },
-        "team2": {
-          "name": "Amazon",
-          "description": "A super technology company",
-          "photo" : "",
-          "current_amount": 200,
-          "total_amount": 2000
-        }
+        "team1": "Microsoft",
+        "team2": "Amazon"
       }
-    ]
-  })
+    ]);
 });
 
 app.get('/teams/:teamId', function(req, res) {
   if (req.params.teamId == "Microsoft") {
-    res.send("Hello World!");
+    res.send({
+      "name": "Microsoft",
+      "description": "A technology company",
+      "photo" : "",
+      "current_amount": 100,
+      "total_amount": 1000
+    });
   } else {
     res.send("Could not find " + req.params.teamId);
   }

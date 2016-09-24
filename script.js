@@ -1,11 +1,11 @@
 // script.js
 
-// create the module and name it strideApp
+// create the module and name it striveApp
     // also include ngRoute for all our routing needs
-var strideApp = angular.module('strideApp', ['ngRoute']);
+var striveApp = angular.module('striveApp', ['ngRoute']);
 
 // configure our routes
-strideApp.config(function($routeProvider) {
+striveApp.config(function($routeProvider) {
     $routeProvider
 
         // route for the home page
@@ -41,40 +41,57 @@ strideApp.config(function($routeProvider) {
             controller  : 'teamsController'
         })
 
+        .when('/matchups/:tag1', {
+          templateUrl : 'pages/matchups.html',
+          controller : 'matchupsController'
+        })
+
+        .when('/company/:companyId', {
+          templateUrl : 'pages/company.html',
+          controller : 'companyController'
+        })
+
         .otherwise({redirectTo : '/home'});
 });
 
 // create the controller and inject Angular's $scope
-strideApp.controller('mainController', function($scope) {
+striveApp.controller('mainController', function($scope) {
     // create a message to display in our view
     $scope.message = 'Everyone come and see how good I look!';
 });
 
-strideApp.controller('aboutController', function($scope) {
+striveApp.controller('aboutController', function($scope) {
     $scope.message = 'Look! I am an about page.';
 });
 
-strideApp.controller('contactController', function($scope) {
+striveApp.controller('contactController', function($scope) {
     $scope.message = 'Contact us! JK. This is just a demo.';
 });
 
-strideApp.controller('tagsController', function($scope, $http) {
+striveApp.controller('tagsController', function($scope, $http) {
   $http.get("/tags")
   .then(function(response) {
     $scope.tags = response.data;
   });
 });
 
-strideApp.controller('teamsController', function($scope, $http) {
+striveApp.controller('teamsController', function($scope, $http) {
   $http.get("/teams")
   .then(function(response) {
     $scope.teams = response.data;
   });
 });
 
-strideApp.controller('matchupsController', function($scope, $http) {
-  $http.get("/teams")
+striveApp.controller('matchupsController', function($scope, $http, $routeParams) {
+  $http.get("/tags/" + $routeParams.tag1)
   .then(function(response) {
-    $scope.teams = response.data;
+    $scope.matchups = response.data;
+  });
+});
+
+striveApp.controller('companyController', function($scope, $http, $routeParams) {
+  $http.get("/teams/" + $routeParams.companyId)
+  .then(function(response) {
+    $scope.company = response.data;
   });
 });
