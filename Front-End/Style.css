@@ -4,9 +4,39 @@
 }
 
 .description {
-    height: 375px;
+    height: 300px;
 }
 
 .spacing {
-    margin-top: 30px;
+    margin-top: 10px;
+}
+
+.reward-container{
+    height: 200px;
+    margin: 10px;
+}
+
+button {
+    display:block;
+    margin: 0 auto;
+}
+
+.reward {
+    padding: 20px;
+    background: linear-gradient(to right, #e5e5e5 , #999999);;
+    height: 200px;
+    border-radius: 20px;
+    color: black;
+}
+
+.reward {
+    position: relative;
+}
+
+.pledge-butt {
+    padding: 20px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
