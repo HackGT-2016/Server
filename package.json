@@ -1,0 +1,24 @@
+{
+  "name": "strive",
+  "version": "1.0.0",
+  "description": "Node backend",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HackGT-2016/Server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HackGT-2016/Server/issues"
+  },
+  "homepage": "https://github.com/HackGT-2016/Server#readme",
+  "dependencies": {
+    "bower": "^1.7.9",
+    "express": "^4.14.0",
+    "sqlite3": "^3.1.4"
+  }
+}

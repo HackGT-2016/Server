@@ -1,0 +1,23 @@
+{
+  "name": "strive",
+  "description": "Node backend",
+  "main": "server.js",
+  "authors": [
+    "nagn <mlin4589@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/HackGT-2016/Server",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8"
+  }
+}
