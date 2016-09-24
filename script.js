@@ -29,7 +29,19 @@ strideApp.config(function($routeProvider) {
         .when('/contact', {
             templateUrl : 'pages/contact.html',
             controller  : 'contactController'
-        });
+        })
+
+        .when('/tags', {
+            templateUrl : 'pages/tags.html',
+            controller  : 'tagsController'
+        })
+
+        .when('/teams', {
+            templateUrl : 'pages/teams.html',
+            controller  : 'teamsController'
+        })
+
+        .otherwise({redirectTo : '/home'});
 });
 
 // create the controller and inject Angular's $scope
@@ -44,4 +56,25 @@ strideApp.controller('aboutController', function($scope) {
 
 strideApp.controller('contactController', function($scope) {
     $scope.message = 'Contact us! JK. This is just a demo.';
+});
+
+strideApp.controller('tagsController', function($scope, $http) {
+  $http.get("/tags")
+  .then(function(response) {
+    $scope.tags = response.data;
+  });
+});
+
+strideApp.controller('teamsController', function($scope, $http) {
+  $http.get("/teams")
+  .then(function(response) {
+    $scope.teams = response.data;
+  });
+});
+
+strideApp.controller('matchupsController', function($scope, $http) {
+  $http.get("/teams")
+  .then(function(response) {
+    $scope.teams = response.data;
+  });
 });
