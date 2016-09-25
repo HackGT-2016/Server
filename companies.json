@@ -80,7 +80,7 @@
 {"name": "Riot",
   "id": "Riot",
   "description": "Riot Games is an American video game developer, publisher, and eSports tournament organizer established in 2006. The company is best known for their game‘ League of Legends’.",
-  "photo": "riot.png",
+  "photo": "riot.jpg",
   "prizes": {
     "amount1": "prize1",
     "amount2": "prize2",
@@ -148,7 +148,7 @@
 {"name": "Ubisoft",
   "id": "Ubisoft",
   "description": "Ubisoft is a French video game developer that is known for series such as Watch Dogs and Assassin’ s Creed.",
-  "photo": "Ubisoft.png",
+  "photo": "Ubisoft.jpg",
   "prizes": {
     "amount1": "prize1",
     "amount2": "prize2",
@@ -158,7 +158,7 @@
 },{"name": "Warner Brothers",
   "id": "Warner_Brothers",
   "description": "WB Games is a leading publisher, developer, licensor and distributor of entertainment content across console, handheld, mobile and PC - based gaming.",
-  "photo": "Warner - Bros.png",
+  "photo": "Warner-Bros.png",
   "prizes": {
     "amount1": "prize1",
     "amount2": "prize2",
@@ -169,7 +169,7 @@
 {"name": "Zynga",
   "id": "Zynga",
   "description": "Zynga is an American provider of social video game services.They develop social games that work stand - alone on mobile phone platforms such as Apple iOS and Android.",
-  "photo": "zynga.png",
+  "photo": "zynga.jpg",
   "prizes": {
     "amount1": "prize1",
     "amount2": "prize2",
