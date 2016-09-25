@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var path = require('path')
 var fs = require('fs')
+var request = require('superagent');
 
 var secrets = './secret-config.json';
 var config
@@ -27,6 +28,16 @@ app.get('/script.js', function (req, res) {
 
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 app.use('/pages', express.static(__dirname + '/pages'));
+
+app.get('/customers', function (req, res) {
+  request.get('http://api.reimaginebanking.com/customers?key=' + config.apiKey).end(function(err, response) {
+    if (err) {
+      console.error("retrieving customers went wrong", err);
+    } else {
+      res.send(response.body);
+    }
+  });
+});
 
 app.get('/tags', function (req, res) {
   res.send([
