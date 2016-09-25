@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset"utf-8"/>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="Style.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script>
+    function calculateWidth(leftVotes, rightVotes) {
+      var left = (leftVotes/(leftVotes + rightVotes)) * 100
+      var right = (rightVotes/(leftVotes + rightVotes)) * 100
+      var leftPer = left.toString() + "%"
+      var rightPer = right.toString() + "%"
+      $("#leftBar").width(leftPer);
+      $("#rightBar").width(rightPer);
+    }
+    $(function () {
+      calculateWidth(3,1);
+    });
+
+</script>
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Strive</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <div class="container-fluid">
+   <div class="col-sm-12">
+    <div class="text-center jumbotron">
+      <h1>Social Media</h1>
+    </div>
+   </div>
+  </div>
+  <div class="container-fluid spacing" height="300">
+    <div class="custom-row row">
+      <div class="col-sm-4">
+        <img class="img-responsive img-circle pull-right" src="twitter.png" alt="Image" width="200" height="200">
+      </div>
+      <div class="vs-icon col-sm-4">
+        <div class="text-center">
+        <img class="img-responsive center-block" src="versus.png" alt="Image" width="75" height="75">
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <img class="img-responsive img-circle pull-left" src="facebook.png" alt="Image" width="200" height="200">
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid spacing">
+    <div class="custom-row row">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-8">
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-danger active" id="leftBar" role="progressbar"></div>
+        <div class="progress-bar progress-bar-striped active" id="rightBar" role="progressbar"></div>
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-1"></div>
+    </div>
+  </div>
+  <div class="container-fluid spacing">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-1"></div>
+  <div class="col-sm-1 pledge"><button type="button" class="btn btn-danger">Pledge</button></div>
+  <div class="col-sm-1"></div>
+  <div class="col-sm-4"></div>
+  <div class="col-sm-1"></div>
+  <div class="col-sm-1 pledge"><button type="button" class="btn btn-primary">Pledge</button></div>
+  <div class="col-sm-1"></div>
+  <div class="col-sm-1"></div>
+  </div> 
+  <div class="container-fluid spacing">
+  <hr>
+  </div>
+</body>
+</html>
