@@ -1,12 +1,56 @@
-<div class="jumbotron text-center">
-  <div ng-if="company.name">
-    <h1>{{ company.name }}</h1>
-    <p>{{ company.description }}</p>
-    <p>{{ company.photo }}</p>
-    <p>Current Amount: {{ company.current_amount }}</p>
-    <p>Total Amount: {{ company.total_amount }}</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-1"></div>
+    <div id="title" class="col-sm-6 text-center">{{company.name}}</div>
+    <div class="col-sm-1"></div>
   </div>
-  <div ng-if="company.name == undefined">
-    <h1>Company not found</h1>
+</div>
+<div class="container-fluid spacing">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="pull-right">
+        <img class="img-responsive" src="photo/{{company.photo}}" alt="{{company.name}}" width="300" height="300">
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-6">
+      <div class="description text-center">
+        {{company.description}}
+      </div>
+    </div>
+    <div class="col-sm-1"></div>
+  </div>
+</div>
+<div class="container-fluid reward-container spacing">
+ <div class="col-sm-4" height="200">
+    <div class="reward">
+      <h4 class="text-center">Pledge $1 or more</h4>
+      <div class="text-center">
+      </div>
+      <div class="text-center pledge-butt">
+      <button type="button" class="pledge-button btn btn-primary btn-lg">Pledge</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4" height="200">
+    <div class="reward">
+      <h4 class="text-center">Pledge $5 or more</h4>
+      <div class="text-center">
+      </div>
+      <div class="text-center pledge-butt">
+      <button type="button" class="pledge-button btn btn-primary btn-lg">Pledge</button>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4" height="200">
+    <div class="reward">
+      <h4 class="text-center">Pledge $10 or more</h4>
+      <div class="text-center">
+      </div>
+      <div class="text-center pledge-butt">
+        <button type="button" class="pledge-button btn btn-primary btn-lg">Pledge</button>
+      </div>
+    </div>
   </div>
 </div>
