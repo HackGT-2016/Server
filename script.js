@@ -92,6 +92,14 @@ striveApp.controller('teamsController', function($scope, $http) {
 });
 
 striveApp.controller('matchupsController', function($scope, $http, $routeParams) {
+  $scope.calculateWidth = function(leftVotes, rightVotes) {
+    var left = (leftVotes/(leftVotes + rightVotes)) * 100
+    var right = (rightVotes/(leftVotes + rightVotes)) * 100
+    var leftPer = left.toString() + "%"
+    var rightPer = right.toString() + "%"
+    $("#leftBar").width(leftPer);
+    $("#rightBar").width(rightPer);
+  }
   $http.get("/tags/" + $routeParams.tag1)
   .then(function(response) {
     $scope.matchups = response.data;
