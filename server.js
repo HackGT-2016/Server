@@ -57,7 +57,19 @@ app.get('/tags/:tagId', function(req, res) {
       {
         "team1": "Warner Brothers",
         "team2": "Electronic Arts"
-      }
+      },
+      {
+        "team1": "Activision",
+        "team2": "Paradox_Interactive"
+      },
+      {
+        "team1": "Aksys Games",
+        "team2": "Konami"
+      },
+      {
+        "team1": "Ubisoft",
+        "team2": "Sega"
+      },
     ]);
 });
 
