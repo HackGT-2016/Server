@@ -1,0 +1,27 @@
+{
+  "Riot": "57e78ab0dbd835571461272b",
+  "Activision": {
+    "account_id": "57e78d09dbd8355714612784",
+    "customer_id": "57e78ab0dbd835571461272c"
+  },
+  "Aksys_Games": "57e78ab0dbd835571461272d",
+  "Blizzard": "57e78ab0dbd835571461272e",
+  "Electronic_Arts": {
+    "customer_id" : "57e78ab0dbd835571461272f",
+    "account_id" : "57e78d09dbd8355714612787"
+  },
+  "Gameloft": "57e78ab0dbd8355714612730",
+  "Konami": "57e78ab0dbd8355714612731",
+  "Paradox_Interactive": "57e78ab0dbd8355714612732",
+  "Rockstar": "57e78ab0dbd8355714612733",
+  "Sega": "57e78ab0dbd8355714612734",
+  "Slitherine Software": "57e78ab0dbd8355714612735",
+  "Take-Two_Interactive": "57e78ab0dbd8355714612736",
+  "Telltale_Games": "57e78ab0dbd8355714612737",
+  "Ubisoft": "57e78ab0dbd8355714612738",
+  "Warner_Brothers": {
+    "customer_id" : "57e78ab0dbd8355714612739",
+    "account_id" : "57e78d0adbd8355714612791"
+  },
+  "Zynga": "57e78ab0dbd835571461273a"
+}

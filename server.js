@@ -6,7 +6,7 @@ var request = require('superagent');
 var secrets = './secret-config.json';
 var config;
 var companies = require('./companies.json');
-
+var company_mapping = require('./company_mapping.json');
 
 try {
     config = require(secrets);
@@ -71,8 +71,10 @@ app.get('/teams/:teamId', function(req, res) {
   res.send("Could not find " + req.params.teamId);
 });
 
-app.get('/money/:teamId', function(req, res) {
-  request.get("http://api.reimaginebanking.com/accounts/{}?key={}".format(req.params.teamId,config.apiKey) ).end(function(err, response) {
+app.get('/money/:name', function(req, res) {
+  var real_id = company_mapping[req.params.name].customer_id;
+  request.get('http://api.reimaginebanking.com/customers/' + real_id + '/accounts' + '?key=' + config.apiKey)
+  .end(function(err, response) {
     if (err) {
       console.error("Retrieving bank info gone wrong", err);
     } else {
@@ -81,10 +83,17 @@ app.get('/money/:teamId', function(req, res) {
   });
 });
 
-app.get('/transfer/:fromId/company/:toId', function(req, res) {
-  request.get("http://api.reimaginebanking.com/accounts/{}?key={}".format(req.params.teamId,config.apiKey) ).end(function(err, response) {
+app.get('/donate/:toId/amount/:amount', function(req, res) {
+  var real_id = company_mapping[req.params.toId].account_id
+  request.post('http://api.reimaginebanking.com/accounts/' + real_id + '/deposits?key=' + config.apiKey)
+  .send({
+    "medium": "balance",
+    "transaction_date": "2016-09-25",
+    "amount": 1000,
+    "description": "Donate"})
+  .end(function(err, response) {
     if (err) {
-      console.error("Retrieving bank info gone wrong", err);
+      console.error("Donation gone wrong", err);
     } else {
       res.send(response.body);
     }

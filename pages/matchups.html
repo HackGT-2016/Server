@@ -2,10 +2,12 @@
  <div class="col-sm-12">
   <div class="text-center jumbotron">
     <h1>Social Media</h1>
+    <h2>{{team1.current_money}}</h2>
+    <h2>{{team2.current_money}}</h2>
   </div>
  </div>
 </div>
-<div ng-init="calculateWidth(3,1)" class="container-fluid spacing" height="200">
+<div class="container-fluid spacing" height="200">
   <div class="custom-row row">
     <div class="info-head col-sm-4">
       <div class="info"><p class="non-p">{{team1.description}}</p></div>
@@ -44,11 +46,11 @@
 <div class="container-fluid spacing">
 <div class="col-sm-1"></div>
 <div class="col-sm-1"></div>
-<div class="col-sm-1 pledge"><button type="button" class="btn btn-danger">Pledge</button></div>
+<div class="col-sm-1 pledge"><button type="button" class="btn btn-danger" ng-click="donate(team1.id)">Pledge</button></div>
 <div class="col-sm-1"></div>
 <div class="col-sm-4"></div>
 <div class="col-sm-1"></div>
-<div class="col-sm-1 pledge"><button type="button" class="btn btn-primary">Pledge</button></div>
+<div class="col-sm-1 pledge"><button type="button" class="btn btn-primary" ng-click="donate(team2.id)">Pledge</button></div>
 <div class="col-sm-1"></div>
 <div class="col-sm-1"></div>
 </div>

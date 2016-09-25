@@ -100,20 +100,45 @@ striveApp.controller('matchupsController', function($scope, $http, $routeParams)
     $("#leftBar").width(leftPer);
     $("#rightBar").width(rightPer);
   }
+  $scope.donate = function(donateID) {
+    $http.get("/donate/" + donateID + "/amount/" + "1")
+    .then(function(response) {
+      if (donateID == "Warner_Brothers") {
+        $scope.team1.current_money += 5;
+      } else {
+        $scope.team2.current_money += 5;
+      }
+      $scope.calculateWidth($scope.team1.current_money, $scope.team2.current_money);
+    });
+  }
   $http.get("/tags/" + $routeParams.tag1)
   .then(function(response) {
     var teams = response.data[0];
     $http.get("/teams/" + teams.team1)
     .then(function(response) {
       $scope.team1 = response.data;
+      $http.get("/money/" + $scope.team1.id)
+      .then(function (response) {
+        $scope.team1.current_money = response.data[0].balance;
+        if ($scope.team2) {
+          $scope.calculateWidth($scope.team1.current_money, $scope.team2.current_money);
+        }
+      });
     });
     $http.get("/teams/" + teams.team2)
     .then(function(response) {
       $scope.team2 = response.data;
+      $http.get("/money/" + $scope.team2.id)
+      .then(function (response) {
+        $scope.team2.current_money = response.data[0].balance;
+        if ($scope.team1) {
+          $scope.calculateWidth($scope.team1.current_money, $scope.team2.current_money);
+        }
+      });
     });
+
   });
 });
-
 striveApp.controller('bracketController', function($scope, $http, $routeParams) {
   $scope.initialize = function() {
     console.log("initalize");
