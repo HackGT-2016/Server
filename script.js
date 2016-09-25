@@ -145,14 +145,7 @@ striveApp.controller('bracketController', function($scope, $http, $routeParams) 
       var pairs = response.data;
       var bracketData = [[], [], [], [], []];
       var seed = 1;
-      for (var i = 0; i < pairs.length; i++) {
-        bracketData[0].push([
-          {"name": pairs[i].team1, "id": pairs[i].team1, "seed": seed},
-          {"name": pairs[i].team2, "id": pairs[i].team2, "seed": seed+1}
-        ])
-        seed += 2;
-      }
-      for(var i = 0; i < 8 - pairs.length; i++) {
+      for(var i = 0; i < 8; i++) {
         bracketData[0].push([
           {"name": "", "id": "", "seed": seed},
           {"name": "", "id": "", "seed": seed+1}
@@ -186,36 +179,47 @@ striveApp.controller('bracketController', function($scope, $http, $routeParams) 
           {"name": "", "id": "", "seed": seed},
         ]);
       }
+      seed = 0;
 
-      console.log(bracketData);
-      var test = [[
-            [ {"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1}, {"name" : "Andrew Miller", "id" : "andrew-miller", "seed" : 2} ],
-            [ {"name" : "James Coutry", "id" : "james-coutry", "seed" : 3}, {"name" : "Sam Merrill", "id" : "sam-merrill", "seed" : 4}],
-            [ {"name" : "Anothy Hopkins", "id" : "anthony-hopkins", "seed" : 5}, {"name" : "Everett Zettersten", "id" : "everett-zettersten", "seed" : 6} ],
-            [ {"name" : "John Scott", "id" : "john-scott", "seed" : 7}, {"name" : "Teddy Koufus", "id" : "teddy-koufus", "seed" : 8}],
-            [ {"name" : "Arnold Palmer", "id" : "arnold-palmer", "seed" : 9}, {"name" : "Ryan Anderson", "id" : "ryan-anderson", "seed" : 10} ],
-            [ {"name" : "Jesse James", "id" : "jesse-james", "seed" : 11}, {"name" : "Scott Anderson", "id" : "scott-anderson", "seed" : 12}],
-            [ {"name" : "Josh Groben", "id" : "josh-groben", "seed" : 13}, {"name" : "Sammy Zettersten", "id" : "sammy-zettersten", "seed" : 14} ],
-            [ {"name" : "Jake Coutry", "id" : "jake-coutry", "seed" : 15}, {"name" : "Spencer Zettersten", "id" : "spencer-zettersten", "seed" : 16}]
-          ],
-          [
-            [ {"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1}, {"name" : "James Coutry", "id" : "james-coutry", "seed" : 3} ],
-            [ {"name" : "Anothy Hopkins", "id" : "anthony-hopkins", "seed" : 5}, {"name" : "Teddy Koufus", "id" : "teddy-koufus", "seed" : 8} ],
-            [ {"name" : "Ryan Anderson", "id" : "ryan-anderson", "seed" : 10}, {"name" : "Scott Anderson", "id" : "scott-anderson", "seed" : 12} ],
-            [ {"name" : "Sammy Zettersten", "id" : "sammy-zettersten", "seed" : 14}, {"name" : "Jake Coutry", "id" : "jake-coutry", "seed" : 15} ]
-          ],
-          [
-            [ {"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1}, {"name" : "Anothy Hopkins", "id" : "anthony-hopkins", "seed" : 5} ],
-            [ {"name" : "Ryan Anderson", "id" : "ryan-anderson", "seed" : 10}, {"name" : "Sammy Zettersten", "id" : "sammy-zettersten", "seed" : 14} ]
-          ],
-          [
-            [ {"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1}, {"name" : "Ryan Anderson", "id" : "ryan-anderson", "seed" : 10} ]
-          ],
-          [
-            [ {"name" : "Erik Zettersten", "id" : "erik-zettersten", "seed" : 1} ]
-          ]]
-      console.log(test);
-      console.log("initalize");
+      for (var i = 0; i < pairs.length; i++) {
+        bracketData[0][i] = [
+          {"name": pairs[i].team1, "id": pairs[i].team1, "seed": seed},
+          {"name": pairs[i].team2, "id": pairs[i].team2, "seed": seed+1}
+        ];
+        seed += 2;
+      }
+
+      seed = 8;
+      for (var i = 8; i < pairs.length; i++) {
+        bracketData[1][i] = [
+          {"name": pairs[i].team1, "id": pairs[i].team1, "seed": seed},
+          {"name": pairs[i].team2, "id": pairs[i].team2, "seed": seed+1}
+        ];
+        seed += 2;
+      }
+      seed = 12;
+      for (var i = 12; i < pairs.length; i++) {
+        bracketData[2][i] = [
+          {"name": pairs[i].team1, "id": pairs[i].team1, "seed": seed},
+          {"name": pairs[i].team2, "id": pairs[i].team2, "seed": seed+1}
+        ];
+        seed += 2;
+      }
+      seed = 14;
+      for (var i = 14; i < pairs.length; i++) {
+        bracketData[3][i] = [
+          {"name": pairs[i].team1, "id": pairs[i].team1, "seed": seed},
+          {"name": pairs[i].team2, "id": pairs[i].team2, "seed": seed+1}
+        ];
+        seed += 2;
+      }
+      seed = 15;
+      for (var i = seed; i < pairs.length; i++) {
+        bracketData[4][i] = [
+          {"name": pairs[i].team1, "id": pairs[i].team1, "seed": seed},
+        ];
+      }
+
         $("#bracket").attr("data-gracket", JSON.stringify(bracketData))
         // init on data-gracket
         $("[data-gracket]").eq(0).gracket({
