@@ -43,13 +43,7 @@ app.get('/customers', function (req, res) {
 
 app.get('/tags', function (req, res) {
   res.send([
-        "cats",
-        "dogs",
-        "elephants",
-        "toys",
-        "entertainment",
-        "cooking",
-        "living"
+        "Social Media"
     ]);
 });
 
