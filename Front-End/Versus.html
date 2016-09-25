@@ -20,6 +20,9 @@
       var rightPer = right.toString() + "%"
       $("#leftBar").width(leftPer);
       $("#rightBar").width(rightPer);
+      var div = document.getElementById('divID');
+
+      div.innerHTML = div.innerHTML + 'Extra stuff';
     }
     $(function () {
       calculateWidth(3,1);
@@ -56,9 +59,13 @@
     </div>
    </div>
   </div>
-  <div class="container-fluid spacing" height="300">
+  <div class="container-fluid spacing" height="200">
     <div class="custom-row row">
-      <div class="col-sm-4">
+      <div class="info-head col-sm-4">
+        <div class="info">
+        <p class="non-p">Hi my name is KevinHi my name is KevinHi my name is <button type="button" class="btn btn-link">See more</button></p>
+
+        </div>
         <img class="img-responsive img-circle pull-right" src="twitter.png" alt="Image" width="200" height="200">
       </div>
       <div class="vs-icon col-sm-4">
@@ -66,7 +73,10 @@
         <img class="img-responsive center-block" src="versus.png" alt="Image" width="75" height="75">
         </div>
       </div>
-      <div class="col-sm-4">
+      <div class="info-head-right col-sm-4">
+      <div class="info-right" text-align="right">
+        <p class="non-p">Hi my name is KevinHi my name is KevinHi my name i<button type="button" class="btn btn-link">See more</button></p>
+        </div>
         <img class="img-responsive img-circle pull-left" src="facebook.png" alt="Image" width="200" height="200">
       </div>
     </div>

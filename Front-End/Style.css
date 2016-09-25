@@ -11,6 +11,10 @@
     }
 }
 
+.test {
+    background:red;
+}
+
 hr {
     border: 0;
     height: 3px;
@@ -21,6 +25,11 @@ hr {
 #title {
     font-size: 40px;
     font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.non-p {
+    width: 200px;
+    height: 60px;
 }
 
 .description {
@@ -43,7 +52,7 @@ button {
 
 .reward {
     padding: 20px;
-    background: linear-gradient(to right, #e5e5e5 , #999999);;
+    background: #e5e5e5;
     height: 200px;
     border-radius: 20px;
     color: black;
@@ -82,3 +91,44 @@ button {
 .progress {
     height: 30px;
 }
+
+.info-head {
+    position: relative;
+    text-align: center;
+}
+
+.info-head-right {
+    position: relative;
+    text-align: center;
+}
+
+.info {
+    border-radius: 100px;
+    width: 425px;
+    height: 200px;
+    background: #e5e5e5;
+    position: absolute;
+    bottom: 0px;
+    z-index: -1;
+    display : flex;
+    align-items : center;
+}
+
+.details {
+    display: flex;
+    align-items : center;
+}
+
+.info-right {
+    border-radius: 100px;
+    width: 425px;
+    height: 200px;
+    position: absolute;
+    background: #e5e5e5;
+    bottom: 0px;
+    z-index: -1;
+    display : flex;
+    align-items : center;
+    padding-left: 200px;
+}
+
