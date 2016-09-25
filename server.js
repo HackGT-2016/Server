@@ -3,9 +3,10 @@ var app = express();
 var path = require('path')
 var fs = require('fs')
 var request = require('superagent');
-
 var secrets = './secret-config.json';
-var config
+var config;
+var companies = require('./companies.json');
+
 
 try {
     config = require(secrets);
@@ -48,11 +49,7 @@ app.get('/tags', function (req, res) {
 });
 
 app.get('/teams', function (req, res) {
-  res.send([
-        "Microsoft",
-        "Amazon",
-        "Google"
-    ]);
+  res.send(companies);
 });
 
 app.get('/tags/:tagId', function(req, res) {
@@ -73,17 +70,13 @@ app.get('/tags/:tagId', function(req, res) {
 });
 
 app.get('/teams/:teamId', function(req, res) {
-  if (req.params.teamId == "Microsoft") {
-    res.send({
-      "name": "Microsoft",
-      "description": "Microsoft was founded by Paul Allen and Bill Gates on April 4, 1975, to develop and sell BASIC interpreters for the Altair 8800. It rose to dominate the personal computer operating system market with MS-DOS in the mid-1980s, followed by Microsoft Windows. The company's 1986 initial public offering (IPO), and subsequent rise in its share price, created three billionaires and an estimated 12,000 millionaires among Microsoft employees. Since the 1990s, it has increasingly diversified from the operating system market and has made a number of corporate acquisitions. In May 2011, Microsoft acquired Skype Technologies for $8.5 billion in its largest acquisition up to,[10] June 2016 announced plan to acquire LinkedIn for $26.2 billion",
-      "photo" : "microsoft.svg",
-      "current_amount": 100,
-      "total_amount": 1000
-    });
-  } else {
-    res.send("Could not find " + req.params.teamId);
+  for (var i = 0; i < companies.length; i++) {
+    if (req.params.teamId == companies[i].name) {
+      res.send(companies[i]);
+      return;
+    }
   }
+  res.send("Could not find " + req.params.teamId);
 });
 
 app.listen(process.env.PORT || 3000, function() {

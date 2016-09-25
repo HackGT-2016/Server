@@ -1,0 +1,179 @@
+[{
+  "name": "Activision",
+  "id": "Activision",
+  "description": "Activision was the world’ s first independent developer and distributor of video games for gaming consoles.They are one of the largest third party video game publishers in the world.",
+  "photo": "Activision.png",
+  "prizes": {
+    "amount1": "prize1",
+    "amount2": "prize2",
+    "amount3": "prize3"
+  },
+  "current_money": 757
+},
+{
+  "name": "Aksys Games",
+  "id": "Aksys_Games",
+  "description": "Aksys Games is a video game publisher that specializes in translating and localizing Japanese video gamee for English - speaking markets.",
+  "photo": "Aksys_games.png",
+  "prizes": {
+    "amount1": "prize1",
+    "amount2": "prize2",
+    "amount3": "prize3"
+  },
+  "current_money": 726
+},
+{
+  "name": "Blizzard",
+  "id": "Blizzard",
+  "description": "Blizzard is an American video game developer, which got started by concentrating on on the creation of game ports or other studios.They have developed multiple successful games like Warcraft, Diablo, and StarCraft.",
+  "photo": "blizzard.png",
+  "prizes": {
+    "amount1": "prize1",
+    "amount2": "prize2",
+    "amount3": "prize3"
+  },
+  "current_money": 494
+},
+{"name": "Electronic Arts",
+  "id": "Electronic_Arts",
+  "description": "EA was the pioneer of the early home computer game industry and was notable for promoting the designers and programmers responsible for its games.As of 2014, EA is the 4 th largest gaming company.",
+  "photo": "EA.jpg",
+  "prizes": {
+    "amount1": "prize1",
+    "amount2": "prize2",
+    "amount3": "prize3"
+  },
+  "current_money": 323
+},{"name": "Gameloft",
+  "id": "Gameloft",
+  "description": "Gameloft is a French video game developer and headquartered in Paris, with 20 game studios subsidiaries located around the world.They have created a number of games for mobile phone handsets, tablets, game consoles and other platforms.",
+  "photo": "Gameloft.png",
+  "prizes": {
+    "amount1": "prize1",
+    "amount2": "prize2",
+    "amount3": "prize3"
+  },
+  "current_money": 151
+},
+{"name": "Konami",
+  "id": "Konami",
+  "description": "Konami is a Japanese entertainment company that operates as a product distributor, distributing trading cards, anime, tokusatsu slot machines and arcade cabinets, video game developer and publisher company.",
+  "photo": "Konami.jpg",
+  "prizes": {
+    "amount1": "prize1",
+    "amount2": "prize2",
+    "amount3": "prize3"
+  },
+  "current_money": 378
+},
+{"name": "Paradox Interactive",
+  "id": "Paradox_Interactive",
+  "description": "Paradox Interactive is a Swedish video game publisher based in Stockholm.The company is best known for releasing historical strategy computer games.",
+  "photo": "Paradox_Interactive.png",
+  "prizes": {
+    "amount1": "prize1",
+    "amount2": "prize2",
+    "amount3": "prize3"
+  },
+  "current_money": 162
+},
+{"name": "Riot",
+  "id": "Riot",
+  "description": "Riot Games is an American video game developer, publisher, and eSports tournament organizer established in 2006. The company is best known for their game‘ League of Legends’.",
+  "photo": "riot.png",
+  "prizes": {
+    "amount1": "prize1",
+    "amount2": "prize2",
+    "amount3": "prize3"
+  },
+  "current_money": 390
+},
+{"name": "Rockstar",
+  "id": "Rockstar",
+  "description": "Rockstar Games ia a multinational video game developer and publisher.It is best knowfor games like Grand Theft Auto, Red Dead, and Midnight Club.",
+  "photo": "Rockstar.png",
+  "prizes": {
+    "amount1": "prize1",
+    "amount2": "prize2",
+    "amount3": "prize3"
+  },
+  "current_money": 987
+},
+{"name": "Sega",
+  "id": "Sega",
+  "description": "Sega Games originally short for Service Games is a Japanese multinational video game developer and published headquartered in Tokyo, Japan.Sega developed and manufactured numerous home video game consoles.",
+  "photo": "Sega.jpg",
+  "prizes": {
+    "amount1": "prize1",
+    "amount2": "prize2",
+    "amount3": "prize3"
+  },
+  "current_money": 545
+},
+{"name": "Slitherine Software",
+  "id": "Slitherine_Software",
+  "description": "Slitherine Software is a UK developer and producer of video games that are primarily turn - based strategy.",
+  "photo": "SlitherineSoftware.png",
+  "prizes": {
+    "amount1": "prize1",
+    "amount2": "prize2",
+    "amount3": "prize3"
+  },
+  "current_money": 372
+},
+
+{"name": "Take - Two Interactive",
+  "id": "Take_Two_Interactive",
+  "description": "Take - Two is an American multinational publisher, developer, and distributor of video games and video game peripherals.",
+  "photo": "Taketwo.png",
+  "prizes": {
+    "amount1": "prize1",
+    "amount2": "prize2",
+    "amount3": "prize3"
+  },
+  "current_money": 648
+},
+
+{"name": "Telltale Games",
+  "id": "Telltale_Games",
+  "description": "Telltale Games is an independent developer that releases mainly episodic adventure games.",
+  "photo": "telltalegames.png",
+  "prizes": {
+    "amount1": "prize1",
+    "amount2": "prize2",
+    "amount3": "prize3"
+  },
+  "current_money": 397
+},
+{"name": "Ubisoft",
+  "id": "Ubisoft",
+  "description": "Ubisoft is a French video game developer that is known for series such as Watch Dogs and Assassin’ s Creed.",
+  "photo": "Ubisoft.png",
+  "prizes": {
+    "amount1": "prize1",
+    "amount2": "prize2",
+    "amount3": "prize3"
+  },
+  "current_money": 207
+},{"name": "Warner Brothers",
+  "id": "Warner_Brothers",
+  "description": "WB Games is a leading publisher, developer, licensor and distributor of entertainment content across console, handheld, mobile and PC - based gaming.",
+  "photo": "Warner - Bros.png",
+  "prizes": {
+    "amount1": "prize1",
+    "amount2": "prize2",
+    "amount3": "prize3"
+  },
+  "current_money": 432
+},
+{"name": "Zynga",
+  "id": "Zynga",
+  "description": "Zynga is an American provider of social video game services.They develop social games that work stand - alone on mobile phone platforms such as Apple iOS and Android.",
+  "photo": "zynga.png",
+  "prizes": {
+    "amount1": "prize1",
+    "amount2": "prize2",
+    "amount3": "prize3"
+  },
+  "current_money": 656
+}]
