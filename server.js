@@ -27,6 +27,7 @@ app.get('/script.js', function (req, res) {
 });
 
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
+app.use('/public', express.static(__dirname + '/public'));
 app.use('/pages', express.static(__dirname + '/pages'));
 
 app.get('/customers', function (req, res) {

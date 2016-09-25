@@ -41,6 +41,11 @@ striveApp.config(function($routeProvider) {
             controller  : 'teamsController'
         })
 
+        .when('/bracket', {
+            templateUrl : 'pages/bracket.html',
+            controller  : 'bracketController'
+        })
+
         .when('/matchups/:tag1', {
           templateUrl : 'pages/matchups.html',
           controller : 'matchupsController'
@@ -91,6 +96,56 @@ striveApp.controller('matchupsController', function($scope, $http, $routeParams)
   .then(function(response) {
     $scope.matchups = response.data;
   });
+});
+
+striveApp.controller('bracketController', function($scope, $http, $routeParams) {
+  $scope.initialize = function() {
+    console.log("initalize");
+      // init on data-gracket
+      $("[data-gracket]").eq(0).gracket({
+        cornerRadius : (15),
+        canvasLineGap : 15
+      });
+      // init on data-gracket
+      $("[data-gracket]").eq(1).gracket({
+        cornerRadius : (15),
+        canvasLineGap : 15
+      });
+      // init on data-gracket
+      $("[data-gracket]").eq(2).gracket({
+        cornerRadius : (50),
+        canvasLineGap : 0,
+        teamClass : "g_team_custom",
+        gameClass : "g_game_custom",
+        currentClass : "g_current_custom",
+        canvasLineColor : "#444",
+        winnerClass : "g_winner_custom"
+      });
+      // init on data-gracket
+      $("[data-gracket]").eq(3).gracket({
+        cornerRadius : (15),
+        canvasLineGap : 15
+      });
+      // init on data-gracket
+      $("[data-gracket]").eq(4).gracket({
+        cornerRadius : (15),
+        canvasLineGap : 15
+      });
+      // init on data-gracket
+      $("[data-gracket]").eq(5).gracket({
+        cornerRadius : (15),
+        roundLabels : ["SPORTS : 1st Round", "SPORTS : 2nd Round", "SPORTS : WINNER!!!!"]
+      });
+      // add some labels
+      $(".container-secondary .secondary-bracket .g_winner")
+        .parent()
+        .css("position", "relative")
+        .prepend("<h4>3rd Place</h4>")
+      $(".container-secondary > div").eq(0).find(".g_winner")
+        .parent()
+        .css("position", "relative")
+        .prepend("<h4>Winner</h4>")
+  }
 });
 
 striveApp.controller('companyController', function($scope, $http, $routeParams) {
