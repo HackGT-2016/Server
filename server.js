@@ -55,16 +55,8 @@ app.get('/teams', function (req, res) {
 app.get('/tags/:tagId', function(req, res) {
   res.send([
       {
-        "team1": "Microsoft",
-        "team2": "Amazon"
-      },
-      {
-        "team1": "Capcom",
-        "team2": "Sega"
-      },
-      {
-        "team1": "Batman",
-        "team2": "Superman"
+        "team1": "Warner Brothers",
+        "team2": "Electronic Arts"
       }
     ]);
 });
@@ -77,6 +69,26 @@ app.get('/teams/:teamId', function(req, res) {
     }
   }
   res.send("Could not find " + req.params.teamId);
+});
+
+app.get('/money/:teamId', function(req, res) {
+  request.get("http://api.reimaginebanking.com/accounts/{}?key={}".format(req.params.teamId,config.apiKey) ).end(function(err, response) {
+    if (err) {
+      console.error("Retrieving bank info gone wrong", err);
+    } else {
+      res.send(response.body);
+    }
+  });
+});
+
+app.get('/transfer/:fromId/company/:toId', function(req, res) {
+  request.get("http://api.reimaginebanking.com/accounts/{}?key={}".format(req.params.teamId,config.apiKey) ).end(function(err, response) {
+    if (err) {
+      console.error("Retrieving bank info gone wrong", err);
+    } else {
+      res.send(response.body);
+    }
+  });
 });
 
 app.listen(process.env.PORT || 3000, function() {

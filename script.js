@@ -102,7 +102,15 @@ striveApp.controller('matchupsController', function($scope, $http, $routeParams)
   }
   $http.get("/tags/" + $routeParams.tag1)
   .then(function(response) {
-    $scope.matchups = response.data;
+    var teams = response.data[0];
+    $http.get("/teams/" + teams.team1)
+    .then(function(response) {
+      $scope.team1 = response.data;
+    });
+    $http.get("/teams/" + teams.team2)
+    .then(function(response) {
+      $scope.team2 = response.data;
+    });
   });
 });
 
