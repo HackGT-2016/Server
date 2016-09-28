@@ -112,8 +112,8 @@ app.get('/donate/:toId/amount/:amount', function(req, res) {
   });
 });
 
-app.listen(process.env.PORT || 3000, function() {
-    var port = 3000;
+app.listen(process.env.PORT || 2000, function() {
+    var port = 2000;
     if (process.env.PORT) {
         port = process.env.PORT;
     }
